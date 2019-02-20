@@ -16,7 +16,8 @@ app.get("/api/photos", (req, res) => {
   unsplash.photos
     .listPhotos(1, 30)
     .then(toJson)
-    .then(json => res.json(json));
+    .then(json => res.json(json))
+    .catch(err => console.log(err));
 });
 
 const PORT = process.env.PORT || 5000;
